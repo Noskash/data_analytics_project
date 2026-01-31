@@ -14,7 +14,6 @@ def read_query_file(query_name: str) -> str:
 def fetch_data(query: str) -> pd.DataFrame:
     with duckdb.connect(DB) as duck:
         df = duck.query(query).to_df()
-        print(df)
 
     return df
 

@@ -28,7 +28,6 @@ def load_data(df: pd.DataFrame, table_name: str):
     with duckdb.connect(DB) as duck:
         duck.execute(f"insert into {table_name} select * from df")
         duck.commit()
-        print(table_name)
 
 def pipeline():
     for sheet in SHEETS:
